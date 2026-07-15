@@ -16,94 +16,96 @@
   .box{border:1px solid #e2e8f0;border-radius:6px;padding:12px 14px;margin:12px 0;background:#f8fafc}
   .box h3{margin:0 0 4px 0;font-size:13px;color:#334155}
   .box p{margin:2px 0;font-size:12px;color:#475569}
+  .highlight{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:10px 14px;margin:12px 0}
+  .highlight strong{color:#16a34a}
 </style>
 </head>
 <body>
 
 <h1>Fill It Out</h1>
-<p class="muted">Privacy Policy â€” Version 1.0.0 â€” Last updated July 2026</p>
+<p class="muted">Privacy Policy â€” Version 1.0.1 â€” Last updated July 2026</p>
 
-<h2>What This Extension Does</h2>
-<p>
-  Fill It Out helps you fill online forms faster. You type or capture your data once (or upload a
-  document like a resume), and the extension fills matching fields on any web form. Your profile
-  data stays in your browser (<strong>IndexedDB / Dexie</strong>) and is never shared with anyone
-  without your explicit sign-in and consent.
-</p>
-
-<div class="box">
-  <h3>&#x1f512; Your data is yours</h3>
-  <p>Profile fields, uploaded documents, and form schemas are stored locally first. Cloud sync
-     is optional (Pro feature) and encrypted before leaving your device.</p>
+<div class="highlight">
+  <strong>&#x1f512; Until you choose to sign in and enable cloud features, nothing leaves your browser.</strong>
+  No data is sent to any server. No account needed. No tracking.
 </div>
 
 <h2>What Data Is Collected</h2>
 
-<h3>Data you provide</h3>
+<p><strong>Data you provide</strong> (stored locally only):</p>
 <ul>
-  <li><strong>Profile fields</strong> you type, capture, or upload (name, email, phone, address, etc.)</li>
-  <li><strong>Documents</strong> you upload (resume, CV, text files) â€” stored locally</li>
-  <li><strong>Form schemas</strong> â€” anonymized field layouts of sites you fill (used to improve future fills)</li>
+  <li>Profile fields you type, capture, or upload (name, email, phone, address, etc.)</li>
+  <li>Documents you upload (resume, CV, text files)</li>
+  <li>Form schemas â€” field layouts of sites you fill (used to improve fills)</li>
 </ul>
 
-<h3>Data the extension reads from pages</h3>
+<p><strong>Data the extension reads from pages</strong> (only on your command):</p>
 <ul>
-  <li><strong>Form field labels, names, and selectors</strong> â€” to know which field is asking for what</li>
-  <li><strong>Field values</strong> you type (only when you press <em>Learn</em> or explicitly want to capture)</li>
+  <li>Form field labels, names, and selectors â€” to match your data to the right field</li>
+  <li>Field values you type â€” only when you press "Learn" or explicitly ask to capture</li>
 </ul>
 
-<h3>For signed-in / Pro users</h3>
+<h2>When Data Leaves Your Device</h2>
+
+<p>Data is <strong>never</strong> sent anywhere unless you take all of these steps:</p>
+<ol>
+  <li><strong>Sign in</strong> to your account (optional, Pro feature)</li>
+  <li><strong>Enable cloud features</strong> in Dashboard settings:
+    <ul>
+      <li>"Cloud sync" â€” syncs your encrypted profile across devices</li>
+      <li>"Cloud AI" â€” sends anonymized form structure to our AI provider to help fill difficult questions</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Signing in alone does NOT share your data. Your data stays local until you explicitly toggle cloud features on.</p>
+
+<p><strong>If you enable Cloud AI:</strong></p>
 <ul>
-  <li><strong>Profile data</strong> is synced to your Supabase account <span class="tag">encrypted</span></li>
-  <li><strong>AI assistance (Oracle)</strong> sends anonymized form structure to our AI provider (OpenRouter / DeepSeek)
-      to suggest field mappings</li>
-  <li><strong>Uploaded document text</strong> may be sent for AI analysis when filling forms</li>
-  <li><strong>Error logs</strong> include page URLs to help us debug â€” we never sell or share this data</li>
-  <li><strong>Anonymous usage stats</strong> (fields filled per form, success rates) help us improve</li>
+  <li>Form field labels (never your personal values) are sent to our AI provider (OpenRouter / DeepSeek)</li>
+  <li>Uploaded document text may be included to generate better answers</li>
+  <li>We never sell your data. We never train AI on your data.</li>
 </ul>
 
-<h2>How Data Is Used</h2>
-<table style="width:100%;border-collapse:collapse;font-size:12px">
-  <tr style="background:#f1f5f9"><th style="text-align:left;padding:4px 6px">Purpose</th><th style="text-align:left;padding:4px 6px">Data</th><th style="text-align:left;padding:4px 6px">Local</th><th style="text-align:left;padding:4px 6px">Cloud</th></tr>
-  <tr><td style="padding:4px 6px">Filling forms</td><td style="padding:4px 6px">Your profile values</td><td style="padding:4px 6px">&#x2713;</td><td style="padding:4px 6px">&#x2713; (Pro, encrypted)</td></tr>
-  <tr style="background:#f8fafc"><td style="padding:4px 6px">Field mapping (AI)</td><td style="padding:4px 6px">Anonymized labels + document context</td><td style="padding:4px 6px">&#x2713;</td><td style="padding:4px 6px">&#x2713; (Oracle, masked)</td></tr>
-  <tr><td style="padding:4px 6px">Quality improvement</td><td style="padding:4px 6px">Error logs, fill stats</td><td style="padding:4px 6px">â€”</td><td style="padding:4px 6px">&#x2713; (aggregated)</td></tr>
-  <tr style="background:#f8fafc"><td style="padding:4px 6px">Account sync</td><td style="padding:4px 6px">Profile fields (Pro)</td><td style="padding:4px 6px">â€”</td><td style="padding:4px 6px">&#x2713; (encrypted)</td></tr>
-</table>
+<h2>Data Storage &amp; Encryption</h2>
+<ul>
+  <li><strong>Local:</strong> All data stored in your browser's IndexedDB â€” no server involved</li>
+  <li><strong>Cloud (if enabled):</strong> Your profile fields are <strong>encrypted</strong> (AES-256-GCM) before leaving your device. The encryption key is derived from your session â€” we cannot read your data</li>
+  <li><strong>You can delete all data</strong> at any time from Dashboard settings, or by uninstalling the extension</li>
+</ul>
 
 <h2>Data Sharing</h2>
 <ul>
-  <li>We <strong>never sell</strong> your data</li>
-  <li>Cloud AI calls go through your own Supabase Edge Function to <strong>OpenRouter / DeepSeek</strong> â€” form labels only, never raw profile values</li>
-  <li>Our infrastructure uses <strong>Supabase</strong> (PostgreSQL) for auth and storage â€” see their
-      <a href="https://supabase.com/privacy" target="_blank">privacy policy</a></li>
-  <li>We use <strong>Stripe</strong> for payments â€” see their
-      <a href="https://stripe.com/privacy" target="_blank">privacy policy</a></li>
+  <li>We <strong>never sell</strong> your personal data</li>
+  <li>We <strong>never train</strong> AI models on your data</li>
+  <li>Cloud AI uses OpenRouter / DeepSeek â€” only anonymized field labels, never your values</li>
+  <li>Our backend uses Supabase (PostgreSQL) â€” see their <a href="https://supabase.com/privacy" target="_blank">privacy policy</a></li>
+  <li>Payments handled by Stripe â€” see their <a href="https://stripe.com/privacy" target="_blank">privacy policy</a></li>
+  <li>Error logs may include page URLs for debugging â€” retained 90 days, never shared</li>
 </ul>
 
 <h2>Your Choices</h2>
 <ul>
-  <li><strong>Use completely offline</strong> â€” never sign in. Everything stays in your browser</li>
-  <li><strong>Disable AI</strong> â€” toggle off "Cloud AI" in Dashboard settings</li>
-  <li><strong>Delete your data</strong> â€” use "Clear All Local Data" in Dashboard, or delete your account</li>
-  <li><strong>Opt out of analytics</strong> â€” uncheck "Anonymous usage stats" in Dashboard settings</li>
+  <li><strong>Use completely offline</strong> â€” never sign in. Nothing leaves your browser</li>
+  <li><strong>Sign in without sharing</strong> â€” signing in does not turn on cloud features</li>
+  <li><strong>Disable cloud AI</strong> â€” toggle off in Dashboard settings</li>
+  <li><strong>Delete your data</strong> â€” "Clear All Local Data" in Dashboard, or delete your account</li>
+  <li><strong>Opt out of analytics</strong> â€” uncheck "Anonymous usage stats" in Dashboard</li>
 </ul>
 
 <h2>Data Retention</h2>
-<p>
-  Local data stays until you delete it. Cloud data (for signed-in Pro users) is kept until you
-  delete your account. Error logs are retained for 90 days. Anonymous usage stats are aggregated
-  and retained indefinitely.
-</p>
+<ul>
+  <li><strong>Local data:</strong> Stays until you delete it or uninstall</li>
+  <li><strong>Cloud data:</strong> Kept until you delete your account</li>
+  <li><strong>Error logs:</strong> Retained 90 days</li>
+  <li><strong>Usage stats:</strong> Anonymous, aggregated, retained indefinitely</li>
+</ul>
 
 <h2>Contact</h2>
-<p>Questions? Open an issue on our GitHub repository or contact us at
-  <a href="mailto:support@fillitout.app">support@fillitout.app</a>.
-</p>
+<p>Questions? Open an issue on our GitHub repository or contact us at <a href="mailto:support@fillitout.app">support@fillitout.app</a>.</p>
 
 <p class="muted" style="margin-top:32px;padding-top:12px;border-top:1px solid #e2e8f0">
-  Fill It Out v1.0.9 &middot; This page is also available at
-  <code>chrome-extension://&lt;id&gt;/privacy-policy.html</code>
+  Fill It Out v1.0.9 &middot; <a href="https://atsclick.github.io/fillitout/privacy-policy.html">Online version</a>
 </p>
 
 </body>
