@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fill It Out â€” Privacy Policy</title>
+<style>
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1e293b;background:#fff;max-width:720px;margin:0 auto;padding:24px 20px;line-height:1.6;font-size:14px}
+  h1{color:#4f46e5;font-size:22px;margin-bottom:4px;border:0}
+  h2{font-size:16px;margin-top:28px;margin-bottom:8px;color:#334155;border-bottom:1px solid #e2e8f0;padding-bottom:4px}
+  p{margin:8px 0}
+  ul{padding-left:20px}
+  li{margin:4px 0}
+  .tag{background:#eef2ff;color:#4f46e5;border-radius:4px;padding:1px 6px;font-size:11px;font-weight:600}
+  .muted{color:#64748b;font-size:12px}
+  .box{border:1px solid #e2e8f0;border-radius:6px;padding:12px 14px;margin:12px 0;background:#f8fafc}
+  .box h3{margin:0 0 4px 0;font-size:13px;color:#334155}
+  .box p{margin:2px 0;font-size:12px;color:#475569}
+</style>
+</head>
+<body>
+
+<h1>Fill It Out</h1>
+<p class="muted">Privacy Policy â€” Version 1.0.0 â€” Last updated July 2026</p>
+
+<h2>What This Extension Does</h2>
+<p>
+  Fill It Out helps you fill online forms faster. You type or capture your data once (or upload a
+  document like a resume), and the extension fills matching fields on any web form. Your profile
+  data stays in your browser (<strong>IndexedDB / Dexie</strong>) and is never shared with anyone
+  without your explicit sign-in and consent.
+</p>
+
+<div class="box">
+  <h3>&#x1f512; Your data is yours</h3>
+  <p>Profile fields, uploaded documents, and form schemas are stored locally first. Cloud sync
+     is optional (Pro feature) and encrypted before leaving your device.</p>
+</div>
+
+<h2>What Data Is Collected</h2>
+
+<h3>Data you provide</h3>
+<ul>
+  <li><strong>Profile fields</strong> you type, capture, or upload (name, email, phone, address, etc.)</li>
+  <li><strong>Documents</strong> you upload (resume, CV, text files) â€” stored locally</li>
+  <li><strong>Form schemas</strong> â€” anonymized field layouts of sites you fill (used to improve future fills)</li>
+</ul>
+
+<h3>Data the extension reads from pages</h3>
+<ul>
+  <li><strong>Form field labels, names, and selectors</strong> â€” to know which field is asking for what</li>
+  <li><strong>Field values</strong> you type (only when you press <em>Learn</em> or explicitly want to capture)</li>
+</ul>
+
+<h3>For signed-in / Pro users</h3>
+<ul>
+  <li><strong>Profile data</strong> is synced to your Supabase account <span class="tag">encrypted</span></li>
+  <li><strong>AI assistance (Oracle)</strong> sends anonymized form structure to our AI provider (OpenRouter / DeepSeek)
+      to suggest field mappings</li>
+  <li><strong>Uploaded document text</strong> may be sent for AI analysis when filling forms</li>
+  <li><strong>Error logs</strong> include page URLs to help us debug â€” we never sell or share this data</li>
+  <li><strong>Anonymous usage stats</strong> (fields filled per form, success rates) help us improve</li>
+</ul>
+
+<h2>How Data Is Used</h2>
+<table style="width:100%;border-collapse:collapse;font-size:12px">
+  <tr style="background:#f1f5f9"><th style="text-align:left;padding:4px 6px">Purpose</th><th style="text-align:left;padding:4px 6px">Data</th><th style="text-align:left;padding:4px 6px">Local</th><th style="text-align:left;padding:4px 6px">Cloud</th></tr>
+  <tr><td style="padding:4px 6px">Filling forms</td><td style="padding:4px 6px">Your profile values</td><td style="padding:4px 6px">&#x2713;</td><td style="padding:4px 6px">&#x2713; (Pro, encrypted)</td></tr>
+  <tr style="background:#f8fafc"><td style="padding:4px 6px">Field mapping (AI)</td><td style="padding:4px 6px">Anonymized labels + document context</td><td style="padding:4px 6px">&#x2713;</td><td style="padding:4px 6px">&#x2713; (Oracle, masked)</td></tr>
+  <tr><td style="padding:4px 6px">Quality improvement</td><td style="padding:4px 6px">Error logs, fill stats</td><td style="padding:4px 6px">â€”</td><td style="padding:4px 6px">&#x2713; (aggregated)</td></tr>
+  <tr style="background:#f8fafc"><td style="padding:4px 6px">Account sync</td><td style="padding:4px 6px">Profile fields (Pro)</td><td style="padding:4px 6px">â€”</td><td style="padding:4px 6px">&#x2713; (encrypted)</td></tr>
+</table>
+
+<h2>Data Sharing</h2>
+<ul>
+  <li>We <strong>never sell</strong> your data</li>
+  <li>Cloud AI calls go through your own Supabase Edge Function to <strong>OpenRouter / DeepSeek</strong> â€” form labels only, never raw profile values</li>
+  <li>Our infrastructure uses <strong>Supabase</strong> (PostgreSQL) for auth and storage â€” see their
+      <a href="https://supabase.com/privacy" target="_blank">privacy policy</a></li>
+  <li>We use <strong>Stripe</strong> for payments â€” see their
+      <a href="https://stripe.com/privacy" target="_blank">privacy policy</a></li>
+</ul>
+
+<h2>Your Choices</h2>
+<ul>
+  <li><strong>Use completely offline</strong> â€” never sign in. Everything stays in your browser</li>
+  <li><strong>Disable AI</strong> â€” toggle off "Cloud AI" in Dashboard settings</li>
+  <li><strong>Delete your data</strong> â€” use "Clear All Local Data" in Dashboard, or delete your account</li>
+  <li><strong>Opt out of analytics</strong> â€” uncheck "Anonymous usage stats" in Dashboard settings</li>
+</ul>
+
+<h2>Data Retention</h2>
+<p>
+  Local data stays until you delete it. Cloud data (for signed-in Pro users) is kept until you
+  delete your account. Error logs are retained for 90 days. Anonymous usage stats are aggregated
+  and retained indefinitely.
+</p>
+
+<h2>Contact</h2>
+<p>Questions? Open an issue on our GitHub repository or contact us at
+  <a href="mailto:support@fillitout.app">support@fillitout.app</a>.
+</p>
+
+<p class="muted" style="margin-top:32px;padding-top:12px;border-top:1px solid #e2e8f0">
+  Fill It Out v1.0.9 &middot; This page is also available at
+  <code>chrome-extension://&lt;id&gt;/privacy-policy.html</code>
+</p>
+
+</body>
+</html>
