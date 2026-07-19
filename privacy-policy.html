@@ -7,48 +7,146 @@
 <link rel="icon" type="image/png" sizes="16x16" href="assets/icons/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/icons/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<title>Fill It Out — Privacy Policy</title>
+<title>Fill It Out â€” Privacy Policy</title>
 <style>
-  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:#1e293b;background:#fff;max-width:720px;margin:0 auto;padding:24px 20px;line-height:1.6;font-size:14px}
-  h1{color:#4f46e5;font-size:22px;margin-bottom:4px;border:0}
-  h2{font-size:16px;margin-top:28px;margin-bottom:8px;color:#334155;border-bottom:1px solid #e2e8f0;padding-bottom:4px}
-  p{margin:8px 0}
-  ul{padding-left:20px}
-  li{margin:4px 0}
-  .tag{background:#eef2ff;color:#4f46e5;border-radius:4px;padding:1px 6px;font-size:11px;font-weight:600}
-  .muted{color:#64748b;font-size:12px}
-  .box{border:1px solid #e2e8f0;border-radius:6px;padding:12px 14px;margin:12px 0;background:#f8fafc}
-  .box h3{margin:0 0 4px 0;font-size:13px;color:#334155}
-  .box p{margin:2px 0;font-size:12px;color:#475569}
-  .highlight{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:6px;padding:10px 14px;margin:12px 0}
-  .highlight strong{color:#16a34a}
+  :root{
+    --bg:#ffffff;--surface:#f8fafc;--border:#e2e8f0;--text:#0f172a;
+    --text-muted:#475569;--text-dim:#64748b;--accent:#4f46e5;
+    --accent-light:#eef2ff;--success:#059669;--success-bg:#ecfdf5;
+    --warning:#d97706;--warning-bg:#fffbeb;--radius:8px;
+  }
+  @media(prefers-color-scheme:dark){
+    :root{--bg:#0b1120;--surface:#131c31;--border:#1e293b;--text:#f1f5f9;
+    --text-muted:#cbd5e1;--text-dim:#94a3b8;--accent:#6366f1;--accent-light:#1e1b4b;
+    --success:#10b981;--success-bg:#064e3b;--warning:#f59e0b;--warning-bg:#78350f;}
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;
+    color:var(--text);background:var(--bg);max-width:680px;margin:0 auto;
+    padding:32px 20px;line-height:1.65;font-size:15px}
+  h1{font-size:24px;font-weight:700;letter-spacing:-0.02em;margin-bottom:2px}
+  h2{font-size:17px;font-weight:600;margin-top:32px;margin-bottom:10px;
+    color:var(--text);border-bottom:1px solid var(--border);padding-bottom:6px}
+  p{margin:10px 0}
+  ul,ol{padding-left:20px;margin:8px 0}
+  li{margin:6px 0}
+  a{color:var(--accent);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .version{color:var(--text-dim);font-size:12px;margin-bottom:24px}
+  .hero{background:var(--success-bg);border:1px solid var(--success);
+    border-radius:var(--radius);padding:16px 20px;margin:0 0 28px}
+  .hero p{margin:0;color:var(--text)}
+  .hero strong{color:var(--success)}
+  .icon{display:inline-flex;vertical-align:middle;width:18px;height:18px;margin-right:4px}
+  .card{background:var(--surface);border:1px solid var(--border);
+    border-radius:var(--radius);padding:14px 16px;margin:12px 0}
+  .card strong{color:var(--text)}
+  .note{font-size:13px;color:var(--text-muted);font-style:italic}
+  .divider{height:1px;background:var(--border);margin:32px 0;border:none}
+  .footer{font-size:12px;color:var(--text-dim);text-align:center;padding-top:8px}
 </style>
 </head>
 <body>
+
 <h1>Fill It Out</h1>
-<p class="muted">Privacy Policy — Version 1.0.1 — Last updated July 2026</p>
-<div class="highlight"><strong>🔒 Until you choose to sign in and enable cloud features, nothing leaves your browser.</strong> No data is sent to any server. No account needed. No tracking.</div>
-<h2>What Data Is Collected</h2>
-<p><strong>Data you provide</strong> (stored locally only):</p>
-<ul><li>Profile fields you type, capture, or upload (name, email, phone, address, etc.)</li><li>Documents you upload (resume, CV, text files)</li><li>Form schemas — field layouts of sites you fill (used to improve fills)</li></ul>
-<p><strong>Data the extension reads from pages</strong> (only on your command):</p>
-<ul><li>Form field labels, names, and selectors — to match your data to the right field</li><li>Field values you type — only when you press "Learn" or explicitly ask to capture</li></ul>
+<p class="version">Privacy Policy â€” Version 1.1.0 â€” Last updated July 2026</p>
+
+<div class="hero">
+  <p><strong>Your privacy comes first.</strong>
+  Nothing leaves your browser until you explicitly enable cloud features.
+  No account required. No tracking. No hidden data collection.
+  Your data stays with you â€” always in your control.</p>
+</div>
+
+<h2>What Data Is Stored</h2>
+
+<p><strong>Data you provide</strong> â€” stored locally in your browser only:</p>
+<ul>
+  <li>Profile fields you type or capture (name, email, phone, address, etc.)</li>
+  <li>Documents you upload (resume, CV, text files)</li>
+  <li>Form field layouts â€” used to improve future fills on the same sites</li>
+</ul>
+
+<p><strong>Data the extension reads from pages</strong> â€” only when you actively use it:</p>
+<ul>
+  <li>Form field labels and names â€” to match your data to the correct field</li>
+  <li>Field values you type â€” only when you press "Learn" to save them</li>
+</ul>
+
 <h2>When Data Leaves Your Device</h2>
-<p>Data is <strong>never</strong> sent anywhere unless you take all of these steps:</p>
-<ol><li><strong>Sign in</strong> to your account (optional, Pro feature)</li><li><strong>Enable cloud features</strong> in Dashboard settings: <ul><li>"Cloud sync" — syncs your encrypted profile across devices</li><li>"Cloud AI" — sends anonymized form structure to our AI provider to help fill difficult questions</li></ul></li></ol>
-<p>Signing in alone does NOT share your data. Your data stays local until you explicitly toggle cloud features on.</p>
-<p><strong>If you enable Cloud AI:</strong></p>
-<ul><li>Form field labels (never your personal values) are sent to our AI provider (OpenRouter / DeepSeek)</li><li>Uploaded document text may be included to generate better answers</li><li>We never sell your data. We never train AI on your data.</li></ul>
-<h2>Data Storage &amp; Encryption</h2>
-<ul><li><strong>Local:</strong> All data stored in your browser's IndexedDB — no server involved</li><li><strong>Cloud (if enabled):</strong> Your profile fields are <strong>encrypted</strong> (AES-256-GCM) before leaving your device. The encryption key is derived from your session — we cannot read your data</li><li><strong>You can delete all data</strong> at any time from Dashboard settings, or by uninstalling the extension</li></ul>
+
+<p>Creating an account does <strong>not</strong> share your data. Your profile stays local
+until you take <strong>two separate actions</strong>:</p>
+
+<ol>
+  <li><strong>Sign in</strong> to your account (optional â€” for Pro features)</li>
+  <li><strong>Explicitly enable</strong> cloud features in Dashboard settings:
+    <ul>
+      <li><strong>Cloud Sync</strong> â€” syncs your encrypted profile across devices</li>
+      <li><strong>Cloud AI</strong> â€” sends form structure to our AI provider for difficult questions</li>
+    </ul>
+  </li>
+</ol>
+
+<p>Each of these is a deliberate, opt-in action. Nothing happens automatically.</p>
+
+<div class="card">
+  <p><strong>If you enable Cloud AI:</strong></p>
+  <ul>
+    <li>Form field labels (not your personal values) are sent to our AI provider</li>
+    <li>Document text may be included to generate better answers for open-ended questions</li>
+    <li>We never sell your data. We never train AI models on your data.</li>
+  </ul>
+</div>
+
+<h2>Encryption</h2>
+
+<ul>
+  <li><strong>Local storage:</strong> All data stays in your browser â€” no server involved</li>
+  <li><strong>Cloud sync:</strong> Your profile fields are encrypted with <strong>AES-256-GCM</strong>
+      before leaving your device. The encryption key is derived from your session â€”
+      we cannot read your data, even if we wanted to.</li>
+  <li><strong>You can delete everything</strong> at any time from Dashboard settings,
+      or by uninstalling the extension</li>
+</ul>
+
 <h2>Data Sharing</h2>
-<ul><li>We <strong>never sell</strong> your personal data</li><li>We <strong>never train</strong> AI models on your data</li><li>Cloud AI uses OpenRouter / DeepSeek — only anonymized field labels, never your values</li><li>Our backend uses Supabase (PostgreSQL) — see their <a href="https://supabase.com/privacy">privacy policy</a></li><li>Payments handled by Stripe — see their <a href="https://stripe.com/privacy">privacy policy</a></li><li>Error logs may include page URLs for debugging — retained 90 days, never shared</li></ul>
+
+<ul>
+  <li>We <strong>never sell</strong> your personal data â€” to anyone, ever</li>
+  <li>We <strong>never train</strong> AI models on your data</li>
+  <li>Cloud AI uses OpenRouter / DeepSeek â€” only form field labels, never your values</li>
+  <li>Backend infrastructure: <a href="https://supabase.com/privacy" target="_blank">Supabase</a></li>
+  <li>Payments: <a href="https://stripe.com/privacy" target="_blank">Stripe</a></li>
+  <li>Error logs may include page URLs for debugging â€” retained 90 days, never shared externally</li>
+</ul>
+
 <h2>Your Choices</h2>
-<ul><li><strong>Use completely offline</strong> — never sign in. Nothing leaves your browser</li><li><strong>Sign in without sharing</strong> — signing in does not turn on cloud features</li><li><strong>Disable cloud AI</strong> — toggle off in Dashboard settings</li><li><strong>Delete your data</strong> — "Clear All Local Data" in Dashboard, or delete your account</li><li><strong>Opt out of analytics</strong> — uncheck "Anonymous usage stats" in Dashboard</li></ul>
+
+<ul>
+  <li><strong>Use completely offline</strong> â€” never sign in. Zero data leaves your browser</li>
+  <li><strong>Sign in without sharing</strong> â€” signing in alone does not enable cloud features</li>
+  <li><strong>Disable cloud AI</strong> at any time â€” toggle off in Dashboard settings</li>
+  <li><strong>Delete your data</strong> â€” "Clear All Local Data" in Dashboard, or delete your account</li>
+  <li><strong>Opt out of analytics</strong> â€” uncheck "Anonymous usage stats" in Dashboard</li>
+</ul>
+
 <h2>Data Retention</h2>
-<ul><li><strong>Local data:</strong> Stays until you delete it or uninstall</li><li><strong>Cloud data:</strong> Kept until you delete your account</li><li><strong>Error logs:</strong> Retained 90 days</li><li><strong>Usage stats:</strong> Anonymous, aggregated, retained indefinitely</li></ul>
+
+<ul>
+  <li><strong>Local data:</strong> Stays until you delete it or uninstall</li>
+  <li><strong>Cloud data:</strong> Kept until you delete your account</li>
+  <li><strong>Error logs:</strong> Retained 90 days</li>
+  <li><strong>Usage stats:</strong> Anonymous, aggregated, retained indefinitely</li>
+</ul>
+
 <h2>Contact</h2>
-<p>Questions? Open an issue on <a href="https://github.com/atsclick/fillitout/issues">GitHub Issues</a> or contact us at <a href="mailto:fiosupport+info.atsclick@gmail.com">fiosupport+info.atsclick@gmail.com</a>.</p>
-<p class="muted" style="margin-top:32px;padding-top:12px;border-top:1px solid #e2e8f0">Fill It Out v1.0.9</p>
+
+<p>Questions? <a href="https://github.com/atsclick/fillitout/issues">Open an issue on GitHub</a>
+or email <a href="mailto:fiosupport+info.atsclick@gmail.com">fiosupport+info.atsclick@gmail.com</a>.</p>
+
+<hr class="divider">
+<p class="footer">Fill It Out v1.0.9</p>
+
 </body>
 </html>
